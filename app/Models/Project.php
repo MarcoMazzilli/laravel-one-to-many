@@ -33,7 +33,8 @@ class Project extends Model
         'status',
         'license',
         'image_path',
-        'image_original_name'
+        'image_original_name',
+        'type_id'
     ];
 
     public function type(){
