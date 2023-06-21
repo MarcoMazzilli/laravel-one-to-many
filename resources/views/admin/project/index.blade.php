@@ -20,6 +20,7 @@
                 <th scope="col">Url</th>
                 <th scope="col">status</th>
                 <th scope="col">license</th>
+                <th scope="col">type</th>
                 <th scope="col">cta</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td>{{ $project->url }}</td>
                 <td>{{ $project->status }}</td>
                 <td>{{ $project->license }}</td>
+                <td>{{ $project->type?->name ?? 'undefined' }}</td>
                 <td>
                     <a href="{{ route('admin.project.show', $project) }}" class="btn btn-success">View</a>
                     <a href="{{ route('admin.project.edit', $project) }}" class="btn btn-warning text-white">Edit</a>

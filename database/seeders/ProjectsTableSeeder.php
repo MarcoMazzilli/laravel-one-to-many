@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -26,6 +27,8 @@ class ProjectsTableSeeder extends Seeder
             $new_project->slug = Project::generateSlug($new_project->project_name);
             $new_project->status = 'In corso';
             $new_project->license = 'MIT';
+
+            $new_project->type_id = Type::inRandomOrder()->first()->id;
 
             $new_project->save();
         }
