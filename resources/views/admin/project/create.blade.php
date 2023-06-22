@@ -34,7 +34,9 @@
                     <option value="" selected>Seleziona la tipologia del progetto</option>
 
                     @foreach ($types as $type )
-                    <option value="{{ $type->id }}">{{ $type?->name}}</option>
+                    <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>
+                        {{ $type?->name}}
+                    </option>
                     @endforeach
 
                 </select>

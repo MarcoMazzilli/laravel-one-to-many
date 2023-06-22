@@ -31,6 +31,20 @@
                 value="{{old('project_name', $project->project_name)}}">
         </div>
 
+        <div class="mb-3 w-25">
+            <label for="type_id" class="form-label">Type</label>
+            <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
+                <option value="" selected>Seleziona la tipologia del progetto</option>
+
+                @foreach ($types as $type )
+                <option value="{{ $type->id }}" {{ old('type_id', $project->type->id) == $type->id ? 'selected' : '' }}>
+                    {{ $type?->name}}
+                </option>
+                @endforeach
+
+            </select>
+        </div>
+
         <div class="mb-3">
             <label for="url" class="form-label">Url</label>
             <input

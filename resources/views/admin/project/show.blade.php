@@ -9,6 +9,9 @@
                 <label class="fw-bold" for="name">Project name</label>
                 <p id="name">{{ $project->project_name }}</p>
 
+                <label class="fw-bold" for="name">Project type</label>
+                <p id="name">{{ $project->type->name }}</p>
+
                 <label class="fw-bold" for="description">Description</label>
                 <p  id="description"> {{ $project->description}}</p>
 
